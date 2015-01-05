@@ -4,9 +4,9 @@
 '**  Copyright (c) 2009 Roku Inc. All Rights Reserved.
 '**********************************************************
 
-REM ******************************************************
-REM Constucts a URL Transfer object
-REM ******************************************************
+' ******************************************************
+' Constucts a URL Transfer object
+' ******************************************************
 
 Function CreateURLTransferObject(url As String) as Object
     obj = CreateObject("roUrlTransfer")
@@ -17,10 +17,10 @@ Function CreateURLTransferObject(url As String) as Object
     return obj
 End Function
 
-REM ******************************************************
-REM Url Query builder
-REM so this is a quick and dirty name/value encoder/accumulator
-REM ******************************************************
+' ******************************************************
+' Url Query builder
+' so this is a quick and dirty name/value encoder/accumulator
+' ******************************************************
 
 Function NewHttp(url As String) as Object
     obj = CreateObject("roAssociativeArray")
@@ -39,9 +39,9 @@ Function NewHttp(url As String) as Object
 End Function
 
 
-REM ******************************************************
-REM Constucts a URL Transfer object 2
-REM ******************************************************
+' ******************************************************
+' Constucts a URL Transfer object 2
+' ******************************************************
 
 Function CreateURLTransferObject2(url As String, contentHeader As String) as Object
     obj = CreateObject("roUrlTransfer")
@@ -52,10 +52,10 @@ Function CreateURLTransferObject2(url As String, contentHeader As String) as Obj
     return obj
 End Function
 
-REM ******************************************************
-REM Url Query builder 2
-REM so this is a quick and dirty name/value encoder/accumulator
-REM ******************************************************
+' ******************************************************
+' Url Query builder 2
+' so this is a quick and dirty name/value encoder/accumulator
+' ******************************************************
 
 Function NewHttp2(url As String, contentHeader As String) as Object
     obj = CreateObject("roAssociativeArray")
@@ -74,19 +74,19 @@ Function NewHttp2(url As String, contentHeader As String) as Object
 End Function
 
 
-REM ******************************************************
-REM HttpEncode - just encode a string
-REM ******************************************************
+' ******************************************************
+' HttpEncode - just encode a string
+' ******************************************************
 
 Function HttpEncode(str As String) As String
     o = CreateObject("roUrlTransfer")
     return o.Escape(str)
 End Function
 
-REM ******************************************************
-REM Prepare the current url for adding query parameters
-REM Automatically add a '?' or '&' as necessary
-REM ******************************************************
+' ******************************************************
+' Prepare the current url for adding query parameters
+' Automatically add a '?' or '&' as necessary
+' ******************************************************
 
 Function http_prepare_url_for_query() As String
     url = m.Http.GetUrl()
@@ -100,12 +100,12 @@ Function http_prepare_url_for_query() As String
     return url
 End Function
 
-REM ******************************************************
-REM Percent encode a name/value parameter pair and add the
-REM the query portion of the current url
-REM Automatically add a '?' or '&' as necessary
-REM Prevent duplicate parameters
-REM ******************************************************
+' ******************************************************
+' Percent encode a name/value parameter pair and add the
+' the query portion of the current url
+' Automatically add a '?' or '&' as necessary
+' Prevent duplicate parameters
+' ******************************************************
 
 Function http_add_param(name As String, val As String) as Void
     q = m.Http.Escape(name)
@@ -116,10 +116,10 @@ Function http_add_param(name As String, val As String) as Void
     m.AddRawQuery(q)
 End Function
 
-REM ******************************************************
-REM Tack a raw query string onto the end of the current url
-REM Automatically add a '?' or '&' as necessary
-REM ******************************************************
+' ******************************************************
+' Tack a raw query string onto the end of the current url
+' Automatically add a '?' or '&' as necessary
+' ******************************************************
 
 Function http_add_raw_query(query As String) as Void
     url = m.PrepareUrlForQuery()
@@ -127,11 +127,11 @@ Function http_add_raw_query(query As String) as Void
     m.Http.SetUrl(url)
 End Function
 
-REM ******************************************************
-REM Performs Http.AsyncGetToString() in a retry loop
-REM with exponential backoff. To the outside
-REM world this appears as a synchronous API.
-REM ******************************************************
+' ******************************************************
+' Performs Http.AsyncGetToString() in a retry loop
+' with exponential backoff. To the outside
+' world this appears as a synchronous API.
+' ******************************************************
 
 Function http_get_to_string_with_retry() as String
     timeout%         = 1500
@@ -147,7 +147,7 @@ Function http_get_to_string_with_retry() as String
                 exit while        
             elseif event = invalid
                 m.Http.AsyncCancel()
-                REM reset the connection on timeouts
+                ' reset the connection on timeouts
                 m.Http = CreateURLTransferObject(m.Http.GetUrl())
                 timeout% = 2 * timeout%
             else
@@ -161,10 +161,10 @@ Function http_get_to_string_with_retry() as String
     return str
 End Function
 
-REM ******************************************************
-REM Performs Http.AsyncGetToString() with a single timeout in seconds
-REM To the outside world this appears as a synchronous API.
-REM ******************************************************
+' ******************************************************
+' Performs Http.AsyncGetToString() with a single timeout in seconds
+' To the outside world this appears as a synchronous API.
+' ******************************************************
 
 Function http_get_to_string_with_timeout(seconds as Integer) as String
     timeout% = 1000 * seconds
@@ -186,10 +186,10 @@ Function http_get_to_string_with_timeout(seconds as Integer) as String
     return str
 End Function
 
-REM ******************************************************
-REM Performs Http.AsyncPostFromString() with a single timeout in seconds
-REM To the outside world this appears as a synchronous API.
-REM ******************************************************
+' ******************************************************
+' Performs Http.AsyncPostFromString() with a single timeout in seconds
+' To the outside world this appears as a synchronous API.
+' ******************************************************
 
 Function http_post_from_string_with_timeout(val As String, seconds as Integer) as String
     timeout% = 1000 * seconds
