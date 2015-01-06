@@ -13,7 +13,7 @@ Function preShowHomeScreen(breadA=invalid, breadB=invalid) As Object
     if validateParam(breadA, "roString", "preShowHomeScreen", true) = false return -1
     if validateParam(breadA, "roString", "preShowHomeScreen", true) = false return -1
 
-    port=CreateObject("roMessagePort")
+    port = CreateObject("roMessagePort")
     screen = CreateObject("roPosterScreen")
     screen.SetMessagePort(port)
     if breadA<>invalid and breadB<>invalid then
@@ -21,7 +21,7 @@ Function preShowHomeScreen(breadA=invalid, breadB=invalid) As Object
     end if
 
     screen.SetListStyle("flat-category")
-    screen.setAdDisplayMode("scale-to-fit")
+    screen.SetAdDisplayMode("scale-to-fit")
     return screen
 
 End Function
@@ -58,7 +58,7 @@ Function showHomeScreen(screen) As Integer
             else if msg.isScreenClosed() then
                 return -1
             end if
-        end If
+        end if
     end while
 
     return 0
@@ -92,16 +92,16 @@ End Function
 Function displaySpecialCategoryScreen() As Dynamic
 
     ' do nothing, this is intended to just show how
-    ' you might add a special category ionto the feed
+    ' you might add a special category into the feed
 
     return 0
 End Function
 
 '************************************************************
-'** initialize the category tree.  We fetch a category list
+'** Initialize the category tree.  We fetch a category list
 '** from the server, parse it into a hierarchy of nodes and
 '** then use this to build the home screen and pass to child
-'** screen in the heirarchy. Each node terminates at a list
+'** screen in the hierarchy. Each node terminates at a list
 '** of content for the sub-category describing individual videos
 '************************************************************
 Function initCategoryList() As Void

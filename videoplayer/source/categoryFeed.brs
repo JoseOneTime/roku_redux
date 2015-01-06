@@ -12,13 +12,14 @@ Function InitCategoryFeedConnection() As Object
 
     conn = CreateObject("roAssociativeArray")
 
-    conn.UrlPrefix   = "http://rokudev.roku.com/rokudev/examples/videoplayer/xml"
+    ' TODO: change these URLs
+    conn.UrlPrefix = "http://rokudev.roku.com/rokudev/examples/videoplayer/xml"
     conn.UrlCategoryFeed = conn.UrlPrefix + "/categories.xml"
 
     conn.Timer = CreateObject("roTimespan")
 
-    conn.LoadCategoryFeed    = load_category_feed
-    conn.GetCategoryNames    = get_category_names
+    conn.LoadCategoryFeed = load_category_feed
+    conn.GetCategoryNames = get_category_names
 
     print "created feed connection for " + conn.UrlCategoryFeed
     return conn
@@ -38,6 +39,7 @@ Function get_category_names(categories As Object) As Dynamic
     for each category in categories.kids
         'print category.Title
         categoryNames.Push(category.Title)
+    ' TODO: change this 'next' to 'end for'
     next
 
     return categoryNames
@@ -47,7 +49,7 @@ End Function
 
 '******************************************************************
 '** Given a connection object for a category feed, fetch,
-'** parse and build the tree for the feed.  the results are
+'** parse and build the tree for the feed.  The results are
 '** stored hierarchically with parent/child relationships
 '** with a single default node named Root at the root of the tree
 '******************************************************************
@@ -62,7 +64,7 @@ Function load_category_feed(conn As Object) As Dynamic
     Dbg("Took: ", m.Timer)
 
     m.Timer.Mark()
-    xml=CreateObject("roXMLElement")
+    xml = CreateObject("roXMLElement")
     if not xml.Parse(rsp) then
          print "Can't parse feed"
         return invalid
@@ -87,7 +89,7 @@ Function load_category_feed(conn As Object) As Dynamic
 
     topNode = MakeEmptyCatNode()
     topNode.Title = "root"
-    topNode.isapphome = true
+    topNode.IsAppHome = true
 
     print "begin category node parsing"
 
@@ -101,6 +103,7 @@ Function load_category_feed(conn As Object) As Dynamic
         else
             print "parse returned no child node"
         endif
+    ' TODO: replace this 'next' with 'end for'?
     next
     Dbg("Traversing: ", m.Timer)
 
@@ -120,7 +123,7 @@ End Function
 'Given the xml element to an <Category> tag in the category
 'feed, walk it and return the top level node to its tree
 '***********************************************************
-Function ParseCategoryNode(xml As Object) As dynamic
+Function ParseCategoryNode(xml As Object) As Dynamic
     o = init_category_item()
 
     print "ParseCategoryNode: " + xml.GetName()

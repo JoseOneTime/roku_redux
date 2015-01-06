@@ -9,9 +9,9 @@
 'Dialog remains up until caller releases the returned object
 '******************************************************
 
-Function ShowPleaseWait(title As dynamic, text As dynamic) As Object
-    if not isstr(title) title = ""
-    if not isstr(text) text = ""
+Function ShowPleaseWait(title As Dynamic, text As Dynamic) As Object
+    if not isStr(title) title = ""
+    if not isStr(text) text = ""
 
     port = CreateObject("roMessagePort")
     dialog = invalid
@@ -44,25 +44,25 @@ End Function
 '******************************************************
 'Show connection error dialog
 '
-'Parameter: retry t/f - offer retry option
+'Parameter: retry true/false - offer retry option
 'Return 0 = retry, 1 = back
 '******************************************************
 
-Function ShowConnectionFailedRetry() as dynamic
+Function ShowConnectionFailedRetry() as Dynamic
     Dbg("Connection Failed Retry")
     title = "Can't connect to video service"
     text  = GetConnectionFailedText()
-    return ShowDialog2Buttons(title, text, "try again", "back")
+    return ShowDialog2Buttons(title, text, "Try again", "Back")
 End Function
 
 '******************************************************
-'Show Amzon connection error dialog with only an OK button
+'Show Amazon connection error dialog with only an OK button
 '******************************************************
 
 Sub ShowConnectionFailed()
     Dbg("Connection Failed")
     title = "Can't connect to video service"
-    text  = GetConnectionFailedText()
+    text = GetConnectionFailedText()
     ShowErrorDialog(text, title)
 End Sub
 
@@ -70,9 +70,9 @@ End Sub
 'Show error dialog with OK button
 '******************************************************
 
-Sub ShowErrorDialog(text As dynamic, title=invalid as dynamic)
-    if not isstr(text) text = "Unspecified error"
-    if not isstr(title) title = ""
+Sub ShowErrorDialog(text As Dynamic, title=invalid as Dynamic)
+    if not isStr(text) text = "Unspecified error"
+    if not isStr(title) title = ""
     ShowDialog1Button(title, text, "Done")
 End Sub
 
@@ -81,9 +81,9 @@ End Sub
 'Return: nothing
 '******************************************************
 
-Sub ShowDialog1Button(title As dynamic, text As dynamic, but1 As String)
-    if not isstr(title) title = ""
-    if not isstr(text) text = ""
+Sub ShowDialog1Button(title As Dynamic, text As Dynamic, but1 As String)
+    if not isStr(title) title = ""
+    if not isStr(text) text = ""
 
     Dbg("DIALOG1: ", title + " - " + text)
 
@@ -116,9 +116,9 @@ End Sub
 'Return: 0=first button or screen closed, 1=second button
 '******************************************************
 
-Function ShowDialog2Buttons(title As dynamic, text As dynamic, but1 As String, but2 As String) As Integer
-    if not isstr(title) title = ""
-    if not isstr(text) text = ""
+Function ShowDialog2Buttons(title As Dynamic, text As Dynamic, but1 As String, but2 As String) As Integer
+    if not isStr(title) title = ""
+    if not isStr(text) text = ""
 
     Dbg("DIALOG2: ", title + " - " + text)
 

@@ -4,6 +4,8 @@
 '**  Copyright (c) 2009 Roku Inc. All Rights Reserved.
 '**********************************************************
 
+'TODO: refactor these '2' funcs into their partners
+
 ' ******************************************************
 ' Constucts a URL Transfer object
 ' ******************************************************
@@ -19,7 +21,7 @@ End Function
 
 ' ******************************************************
 ' Url Query builder
-' so this is a quick and dirty name/value encoder/accumulator
+' this is a quick and dirty name/value encoder/accumulator
 ' ******************************************************
 
 Function NewHttp(url As String) as Object
@@ -107,6 +109,7 @@ End Function
 ' Prevent duplicate parameters
 ' ******************************************************
 
+'TODO: rename these Void funcs as Subs?
 Function http_add_param(name As String, val As String) as Void
     q = m.Http.Escape(name)
     q = q + "="
@@ -139,7 +142,7 @@ Function http_get_to_string_with_retry() as String
 
     str = ""
     while num_retries% > 0
-'        print "httpget try " + itostr(num_retries%)
+        'print "http get try " + itostr(num_retries%)
         if (m.Http.AsyncGetToString())
             event = wait(timeout%, m.Http.GetPort())
             if type(event) = "roUrlEvent"
@@ -195,7 +198,7 @@ Function http_post_from_string_with_timeout(val As String, seconds as Integer) a
     timeout% = 1000 * seconds
 
     str = ""
-'    m.Http.EnableFreshConnection(true) 'Don't reuse existing connections
+    'm.Http.EnableFreshConnection(true) 'Don't reuse existing connections
     if (m.Http.AsyncPostFromString(val))
         event = wait(timeout%, m.Http.GetPort())
         if type(event) = "roUrlEvent"

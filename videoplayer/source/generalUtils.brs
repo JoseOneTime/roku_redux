@@ -642,7 +642,7 @@ End Sub
 '******************************************************
 'Validate parameter is the correct type
 '******************************************************
-Function validateParam(param As Object, paramType As String,functionName As String, allowInvalid = false) As Boolean
+Function validateParam(param As Object, paramType As String, functionName As String, allowInvalid = false) As Boolean
     if paramType = "roString" or paramType = "String" then
         if type(param) = "roString" or type(param) = "String" then
             return true

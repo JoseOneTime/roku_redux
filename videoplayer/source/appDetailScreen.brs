@@ -5,7 +5,7 @@
 '**********************************************************
 
 Function preShowDetailScreen(breadA=invalid, breadB=invalid) As Object
-    port=CreateObject("roMessagePort")
+    port = CreateObject("roMessagePort")
     screen = CreateObject("roSpringboardScreen")
     screen.SetDescriptionStyle("video") 
     screen.SetMessagePort(port)
@@ -107,7 +107,7 @@ Function refreshShowDetail(screen As Object, showList As Object, showIndex as In
     screen.AddButton(1, "Resume playing")    
     screen.AddButton(2, "Play from beginning")    
     else
-    screen.addbutton(2,"Play")
+    screen.AddButton(2, "Play")
     end if
     screen.SetContent(show)
     screen.Show()

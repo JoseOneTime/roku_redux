@@ -22,9 +22,9 @@ Function InitShowFeedConnection(category As Object) As Object
 
     conn.Timer = CreateObject("roTimespan")
 
-    conn.LoadShowFeed    = load_show_feed
-    conn.ParseShowFeed   = parse_show_feed
-    conn.InitFeedItem    = init_show_feed_item
+    conn.LoadShowFeed = load_show_feed
+    conn.ParseShowFeed = parse_show_feed
+    conn.InitFeedItem = init_show_feed_item
 
     print "created feed connection for " + conn.UrlShowFeed
     return conn
@@ -47,7 +47,7 @@ End Function
 ' Initialize a ShowFeedItem. This sets the default values
 ' for everything.  The data in the actual feed is sometimes
 ' sparse, so these will be the default values unless they
-' are overridden while parsing the actual game data
+' are overridden while parsing the actual data
 '***********************************************************
 Function init_show_feed_item() As Object
     o = CreateObject("roAssociativeArray")
@@ -139,7 +139,7 @@ Function parse_show_feed(xml As Object, feed As Object) As Void
         item.Runtime          = validstr(curShow.runtime.GetText())
         item.HDBifUrl         = validstr(curShow.hdBifUrl.GetText())
         item.SDBifUrl         = validstr(curShow.sdBifUrl.GetText())
-        item.StreamFormat = validstr(curShow.streamFormat.GetText())
+        item.StreamFormat     = validstr(curShow.streamFormat.GetText())
         if item.StreamFormat = "" then  'set default streamFormat to mp4 if doesn't exist in xml
             item.StreamFormat = "mp4"
         endif
@@ -163,7 +163,7 @@ Function parse_show_feed(xml As Object, feed As Object) As Void
         item.StarRating = "90"
         item.ContentType = "episode" 
 
-        'media may be at multiple bitrates, so parse an build arrays
+        'media may be at multiple bitrates, so parse and build arrays
         for idx = 0 to 4
             e = curShow.media[idx]
             if e  <> invalid then

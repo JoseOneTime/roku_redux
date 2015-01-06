@@ -13,7 +13,7 @@ Function preShowPosterScreen(breadA=invalid, breadB=invalid) As Object
     if validateParam(breadA, "roString", "preShowPosterScreen", true) = false return -1
     if validateParam(breadB, "roString", "preShowPosterScreen", true) = false return -1
 
-    port=CreateObject("roMessagePort")
+    port = CreateObject("roMessagePort")
     screen = CreateObject("roPosterScreen")
     screen.SetMessagePort(port)
     if breadA<>invalid and breadB<>invalid then
@@ -28,8 +28,8 @@ End Function
 
 '******************************************************
 '** Display the home screen and wait for events from 
-'** the screen. The screen will show retreiving while
-'** we fetch and parse the feeds for the game posters
+'** the screen. The screen will show 'Retrieving...' while
+'** we fetch and parse the feeds for the show posters
 '******************************************************
 Function showPosterScreen(screen As Object, category As Object) As Integer
 
@@ -38,13 +38,13 @@ Function showPosterScreen(screen As Object, category As Object) As Integer
 
     m.curCategory = 0
     m.curShow     = 0
-    temp=getcategorylist(category)
+    temp = GetCategoryList(category)
     
     
     if temp.count() > 1 then
         screen.SetListNames(temp)
         print temp.count();" categories"
-        else
+    else
         print "only ";temp.count();" category"
     end if
     screen.SetContentList(getShowsForCategoryItem(category, m.curCategory))
@@ -57,11 +57,11 @@ Function showPosterScreen(screen As Object, category As Object) As Integer
             if msg.isListFocused() then
                 m.curCategory = msg.GetIndex()
                 m.curShow = 0
-                screen.setcontentlist([])
+                screen.SetContentList([])
                 screen.SetFocusedListItem(m.curShow)
-                screen.showmessage("Retrieving")
+                screen.ShowMessage("Retrieving...")
                 screen.SetContentList(getShowsForCategoryItem(category, m.curCategory))
-                screen.clearmessage()
+                screen.ClearMessage()
                 print "list focused | current category = "; m.curCategory
             else if msg.isListItemSelected() then
                 m.curShow = msg.GetIndex()
@@ -72,7 +72,7 @@ Function showPosterScreen(screen As Object, category As Object) As Integer
             else if msg.isScreenClosed() then
                 return -1
             end if
-        end If
+        end if
     end while
 
 
@@ -113,6 +113,7 @@ Function getCategoryList(topCategory As Object) As Object
     categoryList = CreateObject("roArray", 100, true)
     for each subCategory in topCategory.Kids
         categoryList.Push(subcategory.Title)
+    ' TODO: change this 'next' to 'end for'?
     next
     return categoryList
 
