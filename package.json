@@ -19,5 +19,8 @@
   "homepage": "https://github.com/JoseOneTime/roku_redux",
   "dependencies": {
     "cheerio": "^0.18.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.1.1"
   }
 }
