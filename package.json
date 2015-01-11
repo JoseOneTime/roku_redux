@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/JoseOneTime/roku_redux/issues"
   },
-  "homepage": "https://github.com/JoseOneTime/roku_redux"
+  "homepage": "https://github.com/JoseOneTime/roku_redux",
+  "dependencies": {
+    "cheerio": "^0.18.0"
+  }
 }
