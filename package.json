@@ -1,0 +1,20 @@
+{
+  "name": "ct_roku",
+  "version": "0.0.0",
+  "description": "roku_redux\r ==========",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoseOneTime/roku_redux.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseOneTime/roku_redux/issues"
+  },
+  "homepage": "https://github.com/JoseOneTime/roku_redux"
+}
