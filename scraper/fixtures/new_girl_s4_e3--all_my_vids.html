@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="robots" content="noindex, nofollow, nosnippet, noarchive, noimageindex" />
+<link rel="stylesheet" type="text/css" href="http://ucdn.allmyvideos.net/theme/main-min.css">
+<script src="http://ucdn.allmyvideos.net/jquery-1.4.2.min.js"></script>
+<script src="http://ucdn.allmyvideos.net/jquery.cookie.js"></script>
+<script src="http://allmyvideos.net/s/xfs.min.js?v=10"></script>
+<script src="http://allmyvideos.net/s/show_ads.js"></script>
+
+<style>
+body{ background-image:url('/images/preloader2.gif'); background-repeat: no-repeat; background-position: center center; background-color: #fff; overflow: hidden; }
+#player_img { background-image:url('/images/preloader2.gif');  background-repeat: no-repeat; background-position: center center; background-color: #fff; }
+.fillme { width:100%; height:100%; display:block; overflow:hidden; margin: 0 auto; }
+@media screen and (max-height:500px) { #OnGetPremium { display: none; } }
+</style>
+
+<script>
+$(window).bind('resize', function() { 
+  jwplayer().resize($(window).width(), $(window).height());
+  $('#player_code').width('auto').height('auto');
+});
+function $$(elem){return document.getElementById(elem);}
+function player_start()
+{
+    if ($$('player_ads')) { $$('player_ads').style.display = 'none'; }
+    $$('player_img').style.display = 'none';
+    $$('player_code').style.visibility = 'visible';
+    if (typeof jwplayer=='function') { jwplayer().play(); };
+    return false;
+}
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27527774-1']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+var _gaq_trackpv = 0;
+$(window).click(function() {
+  if (_gaq_trackpv>0) { return; }
+  _gaq_trackpv = 1;
+  _gaq.push(['_trackPageview', 'video_embed.html' ]);
+});
+
+</script>
+
+</head>
+<body topmargin=0 leftmargin=0>
+
+
+
+<div id='container' style="visibility: visible;">
+
+<script type='text/javascript'>document.write('<Style>#player_img {position:relative;}\
+a#vid_play {background: repeat scroll center top; display:block; position:absolute; top:50%; margin-top:-51px; left:50%; margin-left:-51px; z-index: 99; width: 102px; height: 102px;}\
+a#vid_play:hover {background-position:bottom;}\
+#player_ads {position:absolute; top:0px; left:0%; width:100%; height:100%; z-index:2;}\
+#videopreview {position:absolute; z-index:1; width: 80%; height: 80%; top:10%; left:10%; }\
+#logo {position:absolute; z-index: 21; top:1%; left:1%; }\
+</Style>');</script>
+ <div id="player_img" style="width: 100%; height: 100%; position:absolute;left:0;top:0;z-index:400">
+    <a href="http://allmyvideos.net/chnw1d6t4cmv" target=_blank id="logo"><img src="http://ucdn.allmyvideos.net/images/amv-logo-final-small.png" style="border:0; width:100px"></a>
+    <div class='fillme'>
+      <img class="stretch-fill"  src="http://u2166.allmyvideos.net/ri/d4940/01008/yf8v4q5jw6hg.jpg">
+    </div>
+    <a href="#" onclick="return player_start();" id="vid_play" style="background-image: url(http://ucdn.allmyvideos.net/images/play-button-small.png)"></a>
+ </div>
+
+<div id="player_code"><script src='http://jwpsrv.com/library/tL91VhvTEeOZRiIACusDuQ.js'></script>
+	 <div id='flvplayer'></div>
+<script type='text/javascript'>
+$(function() {
+  $('#player_code').height($(window).height());
+  $('#player_code').width($(window).width());
+});
+</script>
+<script type='text/javascript'>
+jwplayer('flvplayer').setup(jwConfig({
+   "id" : "playerID",
+   "abouttext" : "allmyvideos.net",
+   "aboutlink" : "http://allmyvideos.net/faq.html",
+   "startparam" : "start",
+   "skin" : "glow",
+   "dock.position" : "left",
+   "stretching" : "uniform",
+   "ga" : {
+      "idstring" : "mediaid"
+   },
+   "sharing" : {
+      "link" : "http://allmyvideos.net/MEDIAID",
+      "code" : "<iframe src='http://allmyvideos.net/embed-MEDIAID.html' width=900 height=479 frameborder=0 marginwidth=0 marginheight=0 scrolling=no allowfullscreen='true' />"
+   },
+   "rtmp" : {
+      "bufferlength" : 5
+   },
+   "plugins" : {
+      "http://allmyvideos.net/player/popout.js" : {
+         "url" : "http://allmyvideos.net/embed-chnw1d6t4cmv.html"
+      }
+   },
+   "advertising" : {
+      "client" : "vast",
+      "schedule" : {
+         "pre" : {
+            "tag" : [
+               "http://vpc.altitude-arena.com/vpc.xml?uid=80p90cbd697b3645&page_url=__page-url__&cb=__timestamp__&ref_page_url=__page-url__&player_width=__player-width__&player_height=__player-height__&video_duration=__item-duration__&media_file_url=&media_file_title=VidSpot&media_description=&media_file_id=&tagname=altitude",
+               "http://u-ads.adap.tv/a/h/TaWB9ZhTFBmSiB7rVsC__F3WybvdnTB0?cb=%5bCACHE_BREAKER%5d&pageUrl=EMBEDDING_PAGE_URL&description=VIDEO_DESCRIPTION&duration=VIDEO_DURATION&id=VIDEO_ID&keywords=VIDEO_KEYWORDS&title=VIDEO_TITLE&url=VIDEO_URL&eov=eov&tagname=adkarma"
+            ],
+            "offset" : "pre"
+         }
+      }
+   },
+   "logo" : {
+      "link" : "/premium.html",
+      "hide" : true,
+      "position" : "top-right",
+      "file" : "/player/gopremium.png"
+   },
+   "primary" : "flash",
+   "width" : $(window).width(),
+   "height" : $(window).height(),
+   "playlist" : [
+      {
+         "stream_filesrv_id" : "",
+         "stream_cachesrv_id" : "63",
+         "duration" : "1303",
+         "description" : "CC",
+         "httpfallback" : [
+            {
+               "file" : "http://u2166.allmyvideos.net/d/zkmj7xntyq5dh6lny3hidz4ehtrbzeqjs672j2vxwgdrgpv63rsqu5rvj57lxca/video.mp4?v2",
+               "label" : "480",
+               "default" : true
+            },
+            {
+               "file" : "http://u2166.allmyvideos.net/d/zkmj7xntyq5dh6lny3hidz4ehtrbzeqjs672j2vxwkgrgpvp3rs7kvngbjgftpa/video.mp4?v2",
+               "label" : "720",
+               "default" : false
+            }
+         ],
+         "image" : "http://d4940.allmyvideos.net/i/01008/yf8v4q5jw6hg.jpg",
+         "mediaid" : "chnw1d6t4cmv",
+         "sources" : [
+            {
+               "file" : "/rtmp-sources.smil?code=chnw1d6t4cmv&key=06ab2bbeb7ce6c1eb3e5fc8b7ef3c1a2"
+            },
+            {
+               "file" : "http://u2166.allmyvideos.net/d/zkmj7xntyq5dh6lny3hidz4ehtrbzeqjs672j2vxwgdrgpv63rsqu5rvj57lxca/video.mp4?v2",
+               "default" : true,
+               "label" : "480"
+            },
+            {
+               "file" : "http://u2166.allmyvideos.net/d/zkmj7xntyq5dh6lny3hidz4ehtrbzeqjs672j2vxwkgrgpvp3rs7kvngbjgftpa/video.mp4?v2",
+               "default" : false,
+               "label" : "720"
+            }
+         ],
+         "file_id" : "5043487"
+      }
+   ]
+}
+));
+</script>
+</div>
+</div>
+<script>
+if (typeof(jwplayer().onSetupError)=='function') {
+  jwplayer().onSetupError(function(e) {
+    closeOnPlayerBanner();
+    $('#player_img').remove();
+    $('#player_code').css('visibility', 'visible');
+    if (/Could not load plugins/.test(e.message)) {
+      $('#player_code').after('<div class="jwerr"><center>Some software blocks loading of the player plugin.</center><br>Please disable AVAST or any other antispam module or software, the refresh the page.. Please try to disable Avast antispam.</div>');
+    }
+  });
+}
+</script>
+
+
+
+<script type="text/javascript">
+if (xfs.jwplayer.getVersion()<6) {
+  jwplayer().onError(function(msg) { ajaxlog({ logtype: 'jwplayer', type: 'setuperror', message: e.message, platform: navigator.platform }); });
+} else {
+  jwplayer().onSetupError(function(e) { ajaxlog({ logtype: 'jwplayer', type: 'setuperror', fallback: e.fallback, message: e.message, platform: navigator.platform }); });
+}
+
+$(window).load( function() {
+    $('body').css("background-image",'none');
+    $('#container').css("visibility",'visible');
+});
+
+var ga_play_click=0;
+jwplayer().onPlay(function()     { 
+    if (ga_play_click == 0) {
+      ga_play_click = 1;
+       _gaq.push(['_trackPageview', 'video_embed_play.html' ]);
+    }
+});
+
+jQuery(window).bind("message", function(e) {
+  if (e.originalEvent.data=='jwplayer.play') { 
+    jwplayer().play();
+  }
+});
+
+$('.stretch-fill').css('visibility','hidden');
+$('.stretch-fill').imgLoad(xfs.utils.imgStretchFill);
+// $(window).load( function() { $(window).resize(); });
+</script>
+
+
+
+
+
+<script>
+function jsPopunder(p,A){var r;try{r=(top!=self&&typeof(top.document.location.toString())==="string")?top:self}catch(v){r=self}var w=null;var k=null;A=(A||{});var g=(A.name||Math.floor((Math.random()*1000)+1));var c=(A.width||window.outerWidth||window.innerWidth);var o=(A.height||(window.outerHeight-100)||window.innerHeight);var d=(typeof(A.once)=="number")?A.once:1;var m=(typeof(A.left)!="undefined")?A.left.toString():window.screenX;var l=(typeof(A.top)!="undefined")?A.top.toString():window.screenY;var b=(typeof(A.cb)=="function")?A.cb:function(){};var z=(typeof(A.type)!="undefined")?A.type:"popunder";var u=(typeof(A.wait)=="number")?A.wait:0;u=(u*1000);var t=(A.cap||20000);var s=0;var x=(A.cookie||"__.popunder");var j=0;var y=function(){var B=navigator.userAgent.toLowerCase();var e={webkit:/webkit/.test(B),mozilla:(/mozilla/.test(B))&&(!/(compatible|webkit)/.test(B)),chrome:/chrome/.test(B),chrome31:/chrome\/[34][1-9]/.test(B),msie:(/msie/.test(B)||/trident/.test(B))&&(!/opera/.test(B)),firefox:/firefox/.test(B),safari:(/safari/.test(B)&&!(/chrome/.test(B))),opera:/opera/.test(B)};e.version=(e.safari)?(B.match(/.+(?:ri)[\/: ]([\d.]+)/)||[])[1]:(B.match(/.+(?:ox|me|ra|ie)[\/: ]([\d.]+)/)||[])[1];return e}();function i(){try{s=Math.floor(document.cookie.split(x+"Cap=")[1].split(";")[0])}catch(e){}return(t<=s||document.cookie.indexOf(x+"=")!==-1)}function f(E,H,G,D,C,B){if(i()){return}var e="toolbar=no,scrollbars=yes,location=yes,statusbar=yes,menubar=no,resizable=1,width="+G.toString()+",height="+D.toString()+",screenX="+C+",screenY="+B;var F=function(M){M=M||window.event;var L=M.target||M.srcElement;if(L&&L.getAttribute("target")=="_blank"){return}if(i()){return}if((j)&&(d)){return}if((y.chrome)&&(z=="popunder")){k=n()}else{w=r.window.open(E,H,e)}if((w)||(k)){var J=new Date();var K=new Date(J.setTime(J.getTime()+u));if(u>0){document.cookie=x+"=1;expires="+K.toGMTString()+";path=/"}var I=new Date();I.setHours(24,0,0,0);document.cookie=x+"Cap="+(s+1)+";expires="+I.toGMTString()+";path=/";j=1;b(A);if(w){q()}}};if(document.addEventListener){document.addEventListener("click",F,false)}else{document.attachEvent("onclick",F)}}function n(){try{var C=document.createElement("a");C.href=p;var B=document.createEvent("MouseEvents");B.initMouseEvent("click",true,true,window,0,0,0,0,0,true,false,false,true,0,null);C.dispatchEvent(B);return true}catch(D){}}function q(){try{if(z!="popunder"){return}if(y.chrome){var B=document.createEvent("MouseEvents");B.initMouseEvent("click",true,true,window,0,0,0,0,0,false,false,true,false,0,null);w.dispatchEvent(B);document.webkitCancelFullScreen();setTimeout(function(){window.getSelection().empty()},250);return}w.blur();w.opener.window.focus();window.self.window.focus();window.focus();if(y.firefox){a()}if(y.webkit){h()}if(y.msie){setTimeout(function(){w.blur();w.opener.window.focus();window.self.window.focus();window.focus()},1000)}}catch(B){}}function a(){var e=window.open("about:blank");e.focus();e.close()}function h(){var e="";var B=document.createElement("a");B.href="data:text/html,<scr"+e+"ipt>window.close();</scr"+e+"ipt>";document.getElementsByTagName("body")[0].appendChild(B);var C=document.createEvent("MouseEvents");C.initMouseEvent("click",false,true,window,0,0,0,0,0,true,false,false,true,0,null);B.dispatchEvent(C);B.parentNode.removeChild(B)}if(i()){return}else{f(p,g,c,o,m,l)}};
+</script>
+
+<script type="text/javascript">
+var second_popup_installed=0;
+var curstage=1;
+
+
+
+// sexad
+var get_sexad_popup = function () {
+    second_popup_installed = 1;
+    var adname='sexad2';
+    var adcookie="popup.sexad.d1";
+    console.log('popup: ' + adname);
+//    jsPopunder('http://as.sexad.net/as/pu?p=all', {
+    jsPopunder('http://construment.com/b?z=52fbb23a6d47cd9b5c000001', {
+        name: adname + 'Window',
+        top: 0,
+        left: (window.innerWidth-900)/2,
+        width: 1100,
+        height: 800,
+        type: 'popup',
+        cb:  function() {
+            var views = get_cookie_counter(adcookie);
+            var d = new Date();
+            d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+            $.cookie(adcookie, views+1, { expires : d });
+            ajaxlog({ logtype: 'popup', subtype: 'impression', area: 'download1', adprov: adname, country: 'US', platform: navigator.platform, stage: curstage });
+        }
+    });
+
+    ajaxlog({ logtype: 'popup', subtype: 'request', area: 'download1', adprov: adname, country: 'US', platform: navigator.platform, stage: curstage });
+};
+
+// adtrace3
+var get_adtrace3_popup = function () {
+    second_popup_installed = 1;
+    var adname='adtrace3';
+    var adcookie="popup.adtrace3.d1";
+    console.log('popup: ' + adname);
+    jsPopunder('http://cdn.adtrace.org/b?z=5307c99d6d47cd7c73000002', {
+        name: adname + 'Window',
+        top: 0,
+        left: 0,
+        cb:  function() {
+            var views = get_cookie_counter(adcookie);
+            var d = new Date();
+            d.setTime(d.getTime() + (1 * 60 * 60 * 1000));
+            $.cookie(adcookie, views+1, { expires : d });
+            ajaxlog({ logtype: 'popup', subtype: 'impression', area: 'download1', adprov: adname, country: 'US', platform: navigator.platform, stage: curstage });
+        }
+    });
+
+    ajaxlog({ logtype: 'popup', subtype: 'request', area: 'download1', adprov: adname, country: 'US', platform: navigator.platform, stage: curstage });
+};
+
+// adtrace
+var get_adtrace_popup = function () {
+    var adname='adtrace';
+    console.log('popup: ' + adname);
+    $.getScript('http://cdn.adtrace.org/b?z=52f90f176d47cd26a8000002');
+    ajaxlog({ logtype: 'popup', subtype: 'request', area: 'download1', adprov: adname, country: 'US', platform: navigator.platform, stage: curstage });
+};
+
+</script>
+
+<script type="text/javascript">
+// 2nd popup
+
+jQuery(function() {
+    $(document).click(install_2nd_popup);
+    $("#OnPlayerClose").live("click", install_2nd_popup);
+});
+
+var install_2nd_popup  = function(e) {
+   // Left button only
+   curstage=2;
+   if (e.button != 0) return;
+   if (second_popup_installed != 0) return;
+   second_popup_installed = 1;
+
+   return get_adtrace_popup();
+
+}
+// end of 2nd popup
+
+
+
+var xfs_popup_fallback = function() {
+  if (navigator.appVersion.indexOf('Macintosh')>-1) { return ""; };
+  if (
+      (get_cookie_counter("popup.umz.d1") < 10) &&
+      ($.inArray("US", ["CA","AU","GB","IT","UA","US","FI","IE","SE","NO"]) != -1)  &&
+      (Math.random()*100 < 100)
+     ) {
+         return get_adcenter_popup();
+       }
+}
+
+
+var xfs_popup_1st = function() {
+
+  if ((get_cookie_counter("popup.adtrace3.d1") < 1)&&(Math.random()*100 < 0)) { return get_adtrace3_popup(); }
+
+
+//  if (($.inArray("US", ["ES","UA"]) != -1)  && (get_cookie_counter("popup.sexad.d1") < 1)&&(Math.random()*100 < 100)) { return get_sexad_popup(); }
+
+
+  return get_adtrace_popup();
+}
+
+xfs_popup_1st();
+
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+   var onplayspotid=xfs.utils.randchar(8);
+   var adblocktest={present:1, sent: 0};
+   $(function() {
+                $("#player_code").before(
+                        $(document.createElement("div"))
+                        .attr("id", onplayspotid)
+                        .css({
+                                "width": "315px",
+                                "height": "266px",
+                                "position": "absolute",
+                                "z-index": "999998",
+                                "left": "50%",
+                                "top": "50%",
+                                "margin-left": "-158px",
+                                "margin-top": "-133px",
+                                "text-align": "left",
+                                "font-size" : "14px",
+                        })
+                        .append(
+                                $(document.createElement("img"))
+                                .attr("id", "OnPlayerClose")
+                                .attr("title", "Close")
+
+                                .attr("src", "/images/close_gray.png")
+
+                                .css({
+                                        "position": "absolute",
+                                        "left": "300px",
+
+                                        "cursor": "pointer",
+                                        "top": "-27px",
+                                        "z-index" : "999999",
+                                })
+                        )
+                       .append(
+                                $(document.createElement("iframe"))
+                                .attr("id", "iframebanner")
+                                .attr("src", get_ad_d1_over_src() )
+                                .attr("frameborder", "0")
+                                .attr("scrolling", "no")
+                                .css({
+                                        "width" : "308px",
+                                        "height" : "258px",
+                                        "border" : "none",
+                                })
+                        )
+                        .append(
+                                $(document.createElement("a"))
+                                .attr("id", "OnGetPremium")
+                                .attr("href", "/premium.html")
+                                .attr("target", "_blank")
+                                .css({
+                                        "position": "absolute",
+                                        "width" : "420px",
+                                        "bottom": "-15%",
+                                        "left": "-60px",
+                                        "z-index" : "999999",
+                                        "color": "#FFFFFF",
+                                        "font-size" : "15px",
+                                        "font-weight": "normal",
+                                        "text-decoration": "none",
+                                        "padding": "2px",
+                                        "text-align": "center",
+                                })
+                        )
+                 );
+                if (document.getElementById(onplayspotid)) {
+                  document.getElementById(onplayspotid).style.cssText=document.getElementById(onplayspotid).style.cssText + "display: block !important;";
+                }
+                $("#OnPlayerClose").click(function(e) {
+                        e.preventDefault();
+                        adblocktest.present = 0;
+                        $("#" + onplayspotid).remove();
+                });
+                jwplayer().onPlay(function()     { 
+                    if (adblocktest.sent == 1) { return; }
+                    adblocktest.sent=1;
+                    ajaxlog({ logtype: 'adblock', 'event': 'onPlay', testresult: ((adblocktest.present==1) ? 'present' : 'none'), country: 'US' });
+
+                }); 
+
+                if (Math.random() > 0.5) { $("#OnPlayerClose").css({"left":"-14px"}); };
+                if ($(window).width()<320) { $('#OnPlayerClose').css('left',200); }
+                $(window).resize(function() {
+                  if ($(window).width()<320) { $('#OnPlayerClose').css('left',200); } else { $('#OnPlayerClose').css('left',300); }
+                });
+                $("#player_code").after( $(document.createElement("div")).attr("id", 'divstyle').css({ "display" : "none" }));
+                $('#'+onplayspotid).click(function() { closeOnPlayerBanner(); });
+                setTimeout(function() {
+                  if ( ($('#iframebanner').length == 0) && ($('#OnPlayerClose').length>0)) {
+                    if ( 
+                        (get_cookie_counter("over.umz.d1") < 10) &&
+                        ($.inArray("US", ["CA","AU","GB","IT","UA","US","FI","IE","SE","NO","NL","DE","DK","FR","HK","BE","BR","NZ","PT","IT","ZA","ES","SG","IS","PR","DO","HT","CR"]) != -1)  &&
+                        (Math.random()*100 < 100)
+                       ) {
+                          $('#'+onplayspotid).append('<a id="umz300x250" href="http://play" target="_blank"><img width="300" height="250" src="/afiles/umz_playbutton.png" target=_blank border="0"></a>')
+                          $('#umz300x250').click(function() { $('#umz300x250').attr("href","/play?id=4967411&video=New Girl S04E03 Julie Berkmans Older Sister WEB DL x264 AAC"); });
+                          $('#umz300x250').removeAttr('id');
+                        } else {  $("#" + onplayspotid).remove(); }
+                  }
+                },200);
+                
+                $("#OnGetPremium").html("To remove this advertisement buy a <b><u>Premium Account</u></b>");
+                
+        });
+
+
+
+function get_adtrace_d1_overbanner() {
+  console.log('overbanner: adtrace');
+  ajaxlog({ logtype: 'banner', area: 'download1', type: 'over', adprov: 'adtrace', country: 'US' });
+  return 'http://popularitish.com/b?z=52bb01a86d47cddc4d000002&filename=New Girl S04E03 Julie Berkmans Older Sister WEB DL x264 AAC';
+}
+
+function get_umz_d1_overbanner() {
+  var adname='adcenter';
+  var views = get_cookie_counter("over.umz.d1");
+  var d = new Date();
+  d.setTime(d.getTime() + (30 * 60 * 1000));
+  $.cookie("over.umz.d1", views+1, { expires : d });
+  console.log('overbanner: ' + adname);
+  ajaxlog({ logtype: 'banner', area: 'download1', type: 'over', adprov: adname, country: 'US' });
+  return "/afile1s/umz.ttt?New Girl S04E03 Julie Berkmans Older Sister WEB DL x264 AAC";
+}
+
+function get_affbeat_d1_overbanner() {
+  var adname='affbeat';
+  var views = get_cookie_counter("over.umz.d1");
+  var d = new Date();
+  d.setTime(d.getTime() + (30 * 60 * 1000));
+  $.cookie("over.umz.d1", views+1, { expires : d });
+  console.log('overbanner: ' + adname);
+  ajaxlog({ logtype: 'banner', area: 'download1', type: 'over', adprov: adname, country: 'US' });
+  return "/afile1s/affbeat.html";
+}
+
+function get_ad_d1_over_src() {
+//  if (
+//      (get_cookie_counter("over.umz.d1") < 1) &&
+//      ($.inArray("US", ["CA","AU","GB","IT","UA","US","FI","IE","SE","NO","NL","DE","DK","HK","BE","NZ","PT","IT","ZA","SG","IS","PR","DO","HT","CR"]) != -1)  &&
+//      (Math.random()*100 < 100)
+//     ) {
+//      if (Math.random()*100 < 50) {  return get_affbeat_d1_overbanner(); }
+//      return get_umz_d1_overbanner();
+//  }
+//  if (get_cookie_counter("over.umz.d1") < 1) { return get_affbeat_d1_overbanner(); }
+  return get_adtrace_d1_overbanner();
+}
+
+function closeOnPlayerBanner(){
+     $("#" + onplayspotid).remove();
+     adblocktest.present = 0;
+}
+
+</script>        
+
+
+
+
+
+
+</body></html>
+
