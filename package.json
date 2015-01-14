@@ -19,7 +19,8 @@
   "homepage": "https://github.com/JoseOneTime/roku_redux",
   "dependencies": {
     "cheerio": "^0.18.0",
-    "coffee-script": "^1.8.0"
+    "coffee-script": "^1.8.0",
+    "lodash": "^2.4.1"
   },
   "devDependencies": {
     "jasmine-node": "^1.14.5"
